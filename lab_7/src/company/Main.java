@@ -6,7 +6,7 @@ public class Main {
         double[] a = {-42, 324, -1, 0, 1, 2, -23, 4, 14, 6, 7, 8, 9, -10, 11, 12, 113, 14};
         double[] b = {-10, -4, -1, 0, 53, 2, 45, 3, 23, 6, 47, 124, 9, -20, 11, 12, 325};
 
-        ExceptionChecker(a);
+        ExceptionCheckerClass.ExceptionChecker(a);
 
         //Selection sort
         SelectionSort.FirstSort(a);
@@ -22,19 +22,6 @@ public class Main {
             System.out.print(v + ",\t");
         }
 
-    }
-
-    static void ExceptionChecker(double[] a) {
-        try {
-            if (a == null) {
-                throw new NullPointerException("a = null");
-            }
-            if (a.length == 0) {
-                throw new IllegalArgumentException("length = 0");
-            }
-        } catch (NullPointerException | IllegalArgumentException e) {
-            System.out.println("EXCEPTION: " + e.getMessage());
-        }
     }
 
     static class SelectionSort {
