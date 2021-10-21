@@ -1,7 +1,7 @@
 package company;
 
-public class InsertionSort {
-    static void SecondSort(double[] b) {
+public class InsertionSort implements SortingStrategy {
+    public double[] applySort(double[] b) {
         for (int j = 1; j < b.length; j++) {
             double c = b[j];
             int i = j - 1;
@@ -11,5 +11,6 @@ public class InsertionSort {
             }
             b[i + 1] = c;
         }
+        return b;
     }
 }
