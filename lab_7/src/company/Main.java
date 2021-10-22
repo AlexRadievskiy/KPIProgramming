@@ -9,19 +9,22 @@ public class Main {
         double[] b = {-10, -4, -1, 0, 53, 2, 45, 3, 23, 6, 47, 124, 9, -20, 11, 12, 325};
 
         ExceptionCheckerClass.ExceptionChecker(a);
-        SortingStrategy strategy = source -> {
+        ExceptionCheckerClass.ExceptionChecker(b);
+        ISortingStrategy strategy = source -> {
             Arrays.sort(source);
             return source;
         };
-        strategy = new SelectionSort();
 
         //Selection sort
+        strategy = new SelectionSort();
         b = strategy.applySort(b);
         for (double d : b) {
             System.out.print(d + ",\t");
         }
         System.out.println();
+
         //Insertion sort
+        strategy = new InsertionSort();
         a = strategy.applySort(a);
         for (double d : a) {
             System.out.print(d + ",\t");

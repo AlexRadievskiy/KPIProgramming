@@ -1,5 +1,5 @@
 package company;
 
-public interface SortingStrategy {
+public interface ISortingStrategy {
     double[] applySort(double[] source);
 }
