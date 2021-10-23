@@ -13,14 +13,5 @@ public class ExceptionCheckerClass {
             System.out.println("EXCEPTION: " + e.getMessage());
         }
     }
-
-    static void StrExceptionChecker(int strMethod) {
-        try {
-            if (strMethod != 0 | strMethod != 1 | strMethod != 2) {
-                throw new IllegalArgumentException("Illegal strategy type");
-            }
-        } catch (NullPointerException | IllegalArgumentException e) {
-            System.out.println("EXCEPTION: " + e.getMessage());
-        }
-    }
 }
+//Нужна цепочка зависимостей

@@ -1,6 +1,7 @@
 package company;
 
 public class SelectionSort implements ISortingStrategy {
+
     public double[] applySort(double[] a) {
         for (int i = 0; i < a.length - 1; i++) {
             int maxElement = i;

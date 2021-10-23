@@ -1,6 +1,7 @@
 package company;
 
 public class BubbleSort implements ISortingStrategy {
+
     public double[] applySort(double[] a) {
         int n = a.length;
         for(int i=0; i < n; i++){

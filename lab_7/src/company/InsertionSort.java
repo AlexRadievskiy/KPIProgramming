@@ -1,6 +1,7 @@
 package company;
 
 public class InsertionSort implements ISortingStrategy {
+
     public double[] applySort(double[] a) {
         for (int j = 1; j < a.length; j++) {
             double c = a[j];
