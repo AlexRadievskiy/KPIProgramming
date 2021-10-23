@@ -1,10 +1,10 @@
 package company;
 
-public class Strategy implements ISortingStrategy {
+public class StrategyDeterminant implements ISortingStrategy {
 
     private final ISortingStrategy sorter;
 
-    public Strategy(int str) {
+    public StrategyDeterminant(int str) {
         sorter = createSorter(str);
     }
 
