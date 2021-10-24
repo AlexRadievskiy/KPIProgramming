@@ -7,7 +7,7 @@ public class Main {
         //0 - Insertion
         //1 - Selection
         //2 - Bubble
-        int strMethod = 5;
+        int strMethod = 1;
         double[] a = {-42, 324, -1, 0, 1, 2, -23, 4, 14, 6, 7, 8, 9, -10, 11, 12, 113, 14};
 
         ExceptionCheckerClass.ArrayExceptionChecker(a);
