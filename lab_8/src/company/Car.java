@@ -1,13 +1,41 @@
 package company;
 
-public class Car extends Vehicle {
-    private String MoveMethod = "By land";
-    private boolean HasWheels = true;
+import java.util.Objects;
 
-    public String getMoveMethod() {
-        return MoveMethod;
+public final class Car extends Vehicle {
+    private final String carType;
+    private final int maxSpeed;
+
+    public Car(String engineType, String model, String carType) {
+        super(engineType, model);
+        this.carType = carType;
+        switch (carType.toLowerCase()) {
+            case "racing" -> maxSpeed = 220;
+            case "passenger" -> maxSpeed = 120;
+            default -> throw new IllegalArgumentException("Illegal car type");
+        }
     }
-    public boolean getHasWheels() {
-        return HasWheels;
+
+//    public String getCarType() {
+//        return carType;
+//    }
+//    public int getMaxSpeed() {
+//        return maxSpeed;
+//    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "carType='" + carType + '\'' +
+                ", maxSpeed=" + maxSpeed +
+                "} " + super.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return maxSpeed == car.maxSpeed && Objects.equals(carType, car.carType);
     }
 }

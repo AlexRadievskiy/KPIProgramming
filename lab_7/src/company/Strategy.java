@@ -10,17 +10,12 @@ public class Strategy implements ISortingStrategy {
 
     private ISortingStrategy createSorter(int str){
 
-        switch (str) {
-
-            case 0:
-                return new InsertionSort();
-            case 1:
-                return new SelectionSort();
-            case 2:
-                return new BubbleSort();
-            default:
-                throw new IllegalArgumentException("Illegal strategy type");
-        }
+        return switch (str) {
+            case 0 -> new InsertionSort();
+            case 1 -> new SelectionSort();
+            case 2 -> new BubbleSort();
+            default -> throw new IllegalArgumentException("Illegal strategy type");
+        };
     }
 
     @Override
