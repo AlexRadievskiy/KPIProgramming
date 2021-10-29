@@ -6,10 +6,6 @@ public final class Boat extends Vehicle {
     private final String boatType;
     private final int maxSpeed;
 
-    public String getBoatType() {
-        return boatType;
-    }
-
     public int getMaxSpeed() {
         return maxSpeed;
     }

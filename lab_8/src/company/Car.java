@@ -16,6 +16,12 @@ public final class Car extends Vehicle {
         }
     }
 
+    public Car(String engineType, String model) {
+        super(engineType, model);
+        carType = "none";
+        maxSpeed = 0;
+    }
+
 //    public String getCarType() {
 //        return carType;
 //    }
@@ -30,6 +36,7 @@ public final class Car extends Vehicle {
                 ", maxSpeed=" + maxSpeed +
                 "} " + super.toString();
     }
+
 
     @Override
     public boolean equals(Object o) {
