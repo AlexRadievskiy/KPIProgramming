@@ -22,7 +22,7 @@ public class Main {
             System.out.println(rubberBoat.toString());
             System.out.println(racingBoat.toString());
 
-            System.out.println("Getter example: " + rubberBoat.getBoatType());
+            System.out.println("Getter example: " + rubberBoat.getMaxSpeed());
         } catch (NullPointerException | IllegalArgumentException e) {
             System.out.println("EXCEPTION: " + e.getMessage());
         }

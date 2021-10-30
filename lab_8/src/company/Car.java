@@ -22,6 +22,15 @@ public final class Car extends Vehicle {
         maxSpeed = 0;
     }
 
+    public void CarAlert(){
+        System.out.print("Beeb beeb");
+    }
+    public void CarAlert(int duration){
+        for (int i = 0; i < duration; i++) {
+            System.out.print("beeb beeb");
+        }
+    }
+
 //    public String getCarType() {
 //        return carType;
 //    }
@@ -44,5 +53,10 @@ public final class Car extends Vehicle {
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
         return maxSpeed == car.maxSpeed && Objects.equals(carType, car.carType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(carType, maxSpeed);
     }
 }
