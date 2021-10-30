@@ -35,4 +35,9 @@ public final class Boat extends Vehicle {
         Boat boat = (Boat) o;
         return maxSpeed == boat.maxSpeed && Objects.equals(boatType, boat.boatType);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(boatType, maxSpeed);
+    }
 }
