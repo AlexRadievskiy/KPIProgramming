@@ -1,5 +1,5 @@
 package company;
-//test
+
 public class ExceptionChecker {
     static void Checker(String text) {
             if (text == null) {
