@@ -1,5 +1,6 @@
 package company;
-
+//ПЕРЕСДАЧА
+//Объяснить работу equals
 public class Main {
 
     public static void main(String[] args) {
