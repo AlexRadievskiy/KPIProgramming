@@ -45,4 +45,10 @@ public final class Car extends Vehicle {
         Car car = (Car) o;
         return maxSpeed == car.maxSpeed && Objects.equals(carType, car.carType);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(carType, maxSpeed);
+
+    }
 }

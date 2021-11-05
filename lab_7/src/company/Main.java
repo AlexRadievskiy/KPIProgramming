@@ -16,6 +16,5 @@ public class Main {
         ISortingStrategy strategy = new Strategy(strMethod);
         a = strategy.applySort(a);
         resultPrinter.PrintResult(a);
-
     }
 }
