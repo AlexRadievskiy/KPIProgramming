@@ -8,7 +8,7 @@ public class Strategy implements ISortingStrategy {
         sorter = createSorter(str);
     }
 
-    private ISortingStrategy createSorter(int str){
+    private ISortingStrategy createSorter(int str) {
 
         return switch (str) {
             case 0 -> new InsertionSort();

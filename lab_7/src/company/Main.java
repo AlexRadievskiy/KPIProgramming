@@ -1,5 +1,6 @@
 package company;
-//Пересдача
+
+//ПЕРЕСДАЧА
 //Переделать ExceptionCheckerClass
 public class Main {
 
@@ -9,13 +10,16 @@ public class Main {
         //1 - Selection
         //2 - Bubble
         int strMethod = 1;
-        double[] a = {-42, 324, -1, 0, 1, 2, -23, 4, 14, 6, 7, 8, 9, -10, 11, 12, 113, 14};
+        double[] a = null;
 
-        ExceptionCheckerClass.ArrayExceptionChecker(a);
-        ResultPrinter resultPrinter = new ResultPrinter();
-        resultPrinter.PrintResult(a);
-        ISortingStrategy strategy = new Strategy(strMethod);
-        a = strategy.applySort(a);
-        resultPrinter.PrintResult(a);
+        try {
+            ResultPrinter resultPrinter = new ResultPrinter();
+            resultPrinter.PrintResult(a);
+            ISortingStrategy strategy = new Strategy(strMethod);
+            a = strategy.applySort(a);
+            resultPrinter.PrintResult(a);
+        } catch (NullPointerException | IllegalArgumentException e) {
+            System.out.println("EXCEPTION: " + e.getMessage());
+        }
     }
 }

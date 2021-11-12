@@ -49,6 +49,5 @@ public final class Car extends Vehicle {
     @Override
     public int hashCode() {
         return Objects.hash(carType, maxSpeed);
-
     }
 }
