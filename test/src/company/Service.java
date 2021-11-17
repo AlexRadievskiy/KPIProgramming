@@ -10,7 +10,7 @@ public class Service {
         return stores.add(new Store(name));
     }
 
-    public boolean removeProduct() {
-
+    public boolean removeStore(String name) {
+        return stores.remove(new Store(name));
     }
 }

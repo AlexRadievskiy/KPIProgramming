@@ -20,8 +20,7 @@ public class Store {
     }
 
     public Product getProduct(String name) {
-        for (Iterator i = contextProducts.iterator(); i.hasNext(); ) {
-            Object o = i.next();
+        for (Object o : contextProducts) {
             if (o instanceof Product product && product.getProdName().equals(name)) {
                 return product;
             }
