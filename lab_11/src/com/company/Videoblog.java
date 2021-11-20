@@ -21,16 +21,17 @@ public class Videoblog {
         return videoSet;
     }
 
+    //Не типизированный итератор;
     public long allVideos() {
-        long aNumber = 0;
+        long videoSum = 0;
         for (Video video : videoSet) {
-            aNumber += video.getViews();
+            videoSum += video.getViews();
         }
-        return aNumber;
+        return videoSum;
     }
-
+    //Типизированный цикл «for-each»;
     public boolean moreCommentLikesThanVideoLikes() {
-        for (Iterator i = videoSet.iterator(); i.hasNext(); ) {
+        for (Iterator i = videoSet.iterator(); i.hasNext();) {
             Video vid = (Video) i.next();
             if (vid.getVideoLikes() < vid.getMaxCommentLikes()) {
                 return true;
@@ -38,7 +39,7 @@ public class Videoblog {
         }
         return false;
     }
-
+    //Типизированный итератор;
     public TreeSet<Video> maxVideoDislikes() {
         TreeSet<Video> vi = new TreeSet<>(videoByTitleAndUrlComparator);
         long number = worstVideo().getVideoDislikes();

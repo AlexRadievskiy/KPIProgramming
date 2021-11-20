@@ -41,22 +41,6 @@ public class Comments implements Comparable <Comments>{
         return res;
     }
 
-//    @Override
-//    public int compareTo(Comments co) {
-//        if (this.getaNumberOfLikes()> co.getaNumberOfLikes()){
-//            return -1;
-//        } else if (this.getaNumberOfLikes()< co.getaNumberOfLikes()){
-//            return 1;
-//        } else if (this.getaNumberOfDislikes()> co.getaNumberOfDislikes()){
-//            return -1;
-//        } else if (this.getaNumberOfDislikes()< co.getaNumberOfDislikes()){
-//            return 1;
-//        }
-//        else {
-//            return this.getCommentText().compareTo(co.getCommentText());
-//        }
-//    }
-
     @Override
     public String toString() {
         return "Comments: " +
