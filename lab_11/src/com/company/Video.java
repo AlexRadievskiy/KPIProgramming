@@ -8,7 +8,7 @@ public class Video{
     private int views;
     private int videoLikes;
     private int videoDislikes;
-    private Set<Comments> setOfComments = new TreeSet<Comments>();
+    private Set<Comments> setOfComments = new TreeSet<>();
 
     public Video(String videoTitle, String url, int views, int videoLikes, int videoDislikes, Set<Comments> SetOfComments) {
         this.videoTitle = videoTitle;
@@ -25,7 +25,7 @@ public class Video{
         this.views = 0;
         this.videoLikes = 0;
         this.videoDislikes = 0;
-        setOfComments = new TreeSet<Comments>();
+        setOfComments = new TreeSet<>();
     }
 
     public String getVideoTitle() {
