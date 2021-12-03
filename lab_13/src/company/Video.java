@@ -1,6 +1,6 @@
 package company;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Video {
     private String videoTitle;
@@ -8,7 +8,7 @@ public class Video {
     private long views;
     private long videoLikes;
     private long videoDislikes;
-    private ArrayList<Comments> listOfComments;
+    private HashSet<Comments> listOfComments;
 
     public Video() {
         this.videoTitle = "";
@@ -16,10 +16,10 @@ public class Video {
         this.views = 0;
         this.videoLikes = 0;
         this.videoDislikes = 0;
-        listOfComments = new ArrayList<Comments>();
+        listOfComments = new HashSet<Comments>();
     }
 
-    public Video(String videoTitle, String url, long views, long videoLikes, long videoDislikes, ArrayList<Comments> listOfComments) {
+    public Video(String videoTitle, String url, long views, long videoLikes, long videoDislikes, HashSet<Comments> listOfComments) {
         this.videoTitle = videoTitle;
         this.url = url;
         this.views = views;
@@ -68,11 +68,11 @@ public class Video {
         this.videoDislikes = videoDislikes;
     }
 
-    public ArrayList<Comments> getListOfComments() {
+    public HashSet<Comments> getListOfComments() {
         return listOfComments;
     }
 
-    public void setListOfComments(ArrayList<Comments> listOfComments) {
+    public void setListOfComments(HashSet<Comments> listOfComments) {
         this.listOfComments = listOfComments;
     }
 

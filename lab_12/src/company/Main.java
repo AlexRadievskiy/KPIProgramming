@@ -28,5 +28,6 @@ public class Main {
         System.out.println(videoblog.allVideos()); //Общее количество просмотров
         System.out.println(videoblog.moreCommentLikesThanVideoLikes2()); //Лайков у комментария больше чем у видео
         System.out.println(videoblog.maxVideoDislikes()); //Больше всего дизлайков
+        System.out.println(videoblog.videoTitleAndUrl());
     }
 }

@@ -1,44 +1,41 @@
 package company;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
 
 public class VideoBlog {
-    private String videoblogger;
-    private ArrayList<Video> videoList;
+    private final HashMap <String, String> titleAndUrlMap = new HashMap<>();
+    private final String videoblogger;
+    private final HashSet<Video> videoSet;
 
-    public VideoBlog(String videoblogger, ArrayList<Video> videoList) {
+    public VideoBlog(String videoblogger, HashSet<Video> videoSet) {
         this.videoblogger = videoblogger;
-        this.videoList = videoList;
+        this.videoSet = videoSet;
     }
 
     public VideoBlog() {
         this.videoblogger = "";
-        this.videoList = new ArrayList<>();
+        this.videoSet = new HashSet<>();
     }
 
-    public String getVideoBlogger() {
+    public String getVideoblogger() {
         return videoblogger;
     }
 
-    public void setVideoBlogger(String videoblogger) {
-
-        this.videoblogger = videoblogger;
+    public HashSet<Video> getvideoSet() {
+        return videoSet;
     }
 
-    public ArrayList<Video> getVideoList() {
-        return videoList;
-    }
-
-    public void setVideoList(ArrayList<Video> videoList) {
-
-        this.videoList = videoList;
+    public HashMap<String, String> getTitleAndUrlMap() {
+        return titleAndUrlMap;
     }
 
     //Не типизированный итератор;
     public long allVideos() {
         long videoSum = 0;
-        for (Iterator i = videoList.iterator(); i.hasNext(); ) {
+        for (Iterator i = videoSet.iterator(); i.hasNext(); ) {
             Object o = i.next();
             if (o instanceof Video)
                 videoSum += ((Video) o).getViews();
@@ -47,7 +44,7 @@ public class VideoBlog {
     }
     //Типизированный цикл «for-each»;
     public boolean moreCommentLikesThanVideoLikes2() {
-        for (Video vid : videoList) {
+        for (Video vid : videoSet) {
             for (Comments co : vid.getListOfComments()) {
                 if (vid.getVideoLikes() < co.getNumberOfLikes()) {
                     return true;
@@ -58,13 +55,13 @@ public class VideoBlog {
     }
 
     //Типизированный итератор;
-    public ArrayList<String> maxVideoDislikes() {
-        ArrayList<String> maxDislikes = new ArrayList<>();
+    public HashSet<String> maxVideoDislikes() {
+        HashSet<String> maxDislikes = new HashSet<>();
         if (worstVideo().getVideoLikes() == 0) {
-            return new ArrayList<>();
+            return new HashSet<>();
         }
         long number = worstVideo().getVideoDislikes();
-        for (Iterator<Video> i = videoList.iterator(); i.hasNext(); ) {
+        for (Iterator<Video> i = videoSet.iterator(); i.hasNext(); ) {
             Video vid = i.next();
             if (vid.getVideoDislikes() >= number) {
                 maxDislikes.add(vid.getVideoTitle());
@@ -77,7 +74,7 @@ public class VideoBlog {
 
     public Video worstVideo() {
         Video worst = new Video();
-        for (Iterator<Video> i = videoList.iterator(); i.hasNext(); ) {
+        for (Iterator<Video> i = videoSet.iterator(); i.hasNext(); ) {
             Video obj = i.next();
             if (worst.getVideoDislikes() <= obj.getVideoDislikes()) {
                 worst = obj;
@@ -86,10 +83,27 @@ public class VideoBlog {
         return worst;
     }
 
+    public StringBuilder getStatisticOfVideos() {
+        StringBuilder outString = new StringBuilder("Title:\tURL:");
+        for (Map.Entry<String, String> entry : videoTitleAndUrl().entrySet()) {
+            String title = entry.getKey();
+            String url = entry.getValue();
+            outString.append("\n").append(title).append("\t").append(url);
+        }
+        return outString;
+    }
+
+    public HashMap<String, String> videoTitleAndUrl(){
+        for (Video vid: videoSet){
+            titleAndUrlMap.put(vid.getVideoTitle(), vid.getUrl());
+        }
+        return titleAndUrlMap;
+    }
+
     @Override
     public String toString() {
         return "Videoblog: " +
                 "videoblogger='" + videoblogger + '\'' +
-                ", videoList=" + videoList;
+                ", videoSet=" + videoSet;
     }
 }
