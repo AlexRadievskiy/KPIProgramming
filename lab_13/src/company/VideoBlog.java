@@ -37,10 +37,6 @@ public class VideoBlog {
 
     //Не типизированный итератор;
     public long allVideos() {
-        throws IllegalArgumentException {
-            if () {throw new IllegalArgumentException("");
-            }
-        }
         long videoSum = 0;
         for (Iterator i = videoList.iterator(); i.hasNext(); ) {
             Object o = i.next();
