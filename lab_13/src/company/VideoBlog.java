@@ -33,7 +33,7 @@ public class VideoBlog {
     }
 
     //Не типизированный итератор;
-    public long allVideos() {
+    public long allVideos() throws MyException {
         long videoSum = 0;
         for (Iterator i = videoSet.iterator(); i.hasNext(); ) {
             Object o = i.next();
@@ -43,7 +43,7 @@ public class VideoBlog {
         return videoSum;
     }
     //Типизированный цикл «for-each»;
-    public boolean moreCommentLikesThanVideoLikes2() {
+    public boolean moreCommentLikesThanVideoLikes2() throws MyException {
         for (Video vid : videoSet) {
             for (Comments co : vid.getListOfComments()) {
                 if (vid.getVideoLikes() < co.getNumberOfLikes()) {
@@ -55,7 +55,7 @@ public class VideoBlog {
     }
 
     //Типизированный итератор;
-    public HashSet<String> maxVideoDislikes() {
+    public HashSet<String> maxVideoDislikes() throws MyException {
         HashSet<String> maxDislikes = new HashSet<>();
         if (worstVideo().getVideoLikes() == 0) {
             return new HashSet<>();
@@ -72,7 +72,7 @@ public class VideoBlog {
         return maxDislikes;
     }
 
-    public Video worstVideo() {
+    public Video worstVideo() throws MyException {
         Video worst = new Video();
         for (Iterator<Video> i = videoSet.iterator(); i.hasNext(); ) {
             Video obj = i.next();

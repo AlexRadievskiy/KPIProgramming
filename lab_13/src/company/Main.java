@@ -31,7 +31,7 @@ public class Main {
             System.out.println(videoblog.maxVideoDislikes()); //Больше всего дизлайков
             System.out.println(videoblog.videoTitleAndUrl());
 
-        } catch (MyException | NullPointerException | IllegalArgumentException e) {
+        } catch (MyException | NullPointerException e) {
             System.out.println("EXCEPTION: " + e.getMessage());
         }
     }
