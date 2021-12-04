@@ -3,7 +3,7 @@ package company;
 import java.util.HashSet;
 
 public class ExceptionGenerator {
-    void checker(String videoTitle) {
+    void checker(Video videoTitle) {
         if (videoTitle == null) {
             throw new NullPointerException("Video title = null");
         }

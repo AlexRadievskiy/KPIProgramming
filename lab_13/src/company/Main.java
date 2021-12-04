@@ -17,13 +17,18 @@ public class Main {
             HashSet<Comments> secondCommentsList = new HashSet<>();
 
             secondCommentsList.add(thirdComment);
-            Video secondVideo = new Video("Second title", "https://linkTwo", 432, 324, 0, secondCommentsList);
+            Video secondVideo = new Video(null, "https://linkTwo", 432, 324, 0, secondCommentsList);
 
             HashSet<Video> videoList = new HashSet<>();
-            videoList.add(firstVideo);
-            videoList.add(secondVideo);
+//            videoList.add(firstVideo);
+//            videoList.add(secondVideo);
 
             VideoBlog videoblog = new VideoBlog("Georg", videoList);
+
+            ExceptionGenerator exceptionGenerator = new ExceptionGenerator();
+            exceptionGenerator.checker(secondVideo);
+            exceptionGenerator.title(videoList);
+
 
             //ВЫВОД
             System.out.println(videoblog.allVideos()); //Общее количество просмотров
