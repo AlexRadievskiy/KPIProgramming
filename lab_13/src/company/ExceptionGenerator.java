@@ -10,7 +10,7 @@ public class ExceptionGenerator {
     }
     void title(HashSet<Video> videoSet) throws MyException {
         if (videoSet.size() == 0) {
-            throw new MyException(0, "message");
+            throw new MyException(0, "No videos found");
         }
     }
 }

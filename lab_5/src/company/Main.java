@@ -3,68 +3,54 @@ package company;
 public class Main {
 
     public static void main(String[] args) {
-        double[] a = {-42, 324, -1, 0, 1, 2, -23, 4, 14, 6, 7, 8, 9, -10, 11, 12, 113, 14};
-        double[] b = {-10, -4, -1, 0, 53, 2, 45, 3, 23, 6, 47, 124, 9, -20, 11, 12, 325};
+        int [][] matrix = {
+                {11,12,13,14,15},
+                {21,22,23,24,25},
+                {31,32,33,34,35}};
 
-        ExceptionChecker(a);
+//        int [][] matrix = {
+//                {11,12,13,14},
+//                {21,22,23,24},
+//                {31,32,33,34}};
 
-        //Selection sort
-        SelectionSort.FirstSort(a);
-        for (double v : a) {
-            System.out.print(v + ",\t");
+//        int[][] matrix = null;
+
+        int [][] soccerScore = {
+                {0,1,1,1},
+                {1,0,1,1},
+                {0,0,0,1},
+                {1,1,1,0}};
+
+        //Заданый массив
+        for (int i = 0; i < matrix.length; i++) { //идём по строкам
+            for (int j = 0; j < matrix.length+1; j++) { //идём по столбцам
+                System.out.print(" " + matrix[i][j] + " "); //вывод элемента
+            }
+            System.out.println();
         }
-
         System.out.println();
 
-        //Insertion sort
-        InsertionSort.SecondSort(b);
-        for (double v : b) {
-            System.out.print(v + ",\t");
-        }
-
-    }
-
-    static void ExceptionChecker(double[] a) {
         try {
-            if (a == null) {
-                throw new NullPointerException("a = null");
-            }
-            if (a.length == 0) {
-                throw new IllegalArgumentException("length = 0");
-            }
-        } catch (NullPointerException | IllegalArgumentException e) {
-            System.out.println("EXCEPTION: " + e.getMessage());
-        }
-    }
+        ReplacingStrings.lolSwap(matrix);
 
-    static class SelectionSort {
-        static void FirstSort(final double[] a) {
-            for (int i = 0; i < a.length - 1; i++) {
-                int maxElement = i;
-                for (int j = i + 1; j < a.length; j++) {
-                    if (a[maxElement] < a[j]) {
-                        maxElement = j;
-                    }
-                } if (maxElement != i) {
-                    double t = a[i];
-                    a[i] = a[maxElement];
-                    a[maxElement] = t;
+            for (int i = 0; i < matrix.length; i++) { //идём по строкам
+                for (int j = 0; j < matrix.length+1; j++) { //идём по столбцам
+                    System.out.print(" " + matrix[i][j] + " "); //вывод элемента
                 }
+                System.out.println();
             }
-        }
-    }
+            System.out.println();
 
-    static class InsertionSort {
-        static void SecondSort(double[] b) {
-            for (int j = 1; j < b.length; j++) {
-                double c = b[j];
-                int i = j-1;
-                while (i > -1 && b[i] < c) {
-                    b[i+1] = b[i];
-                    i--;
-                }
-                b[i+1] = c;
-            }
+        } catch (NullPointerException e) {
+            System.out.println("EXCEPTION! Array length is null " + e.getMessage());
+        }
+
+        try {
+
+            SoccerGame.getFlawless(soccerScore);
+//            System.out.println("Команда " + SoccerGame.getFlawless(soccerScore) + " прошла все матрчи без единого поражения!");
+        } catch (NullPointerException e) {
+            System.out.println("EXCEPTION! Array length is null " + e.getMessage());
         }
     }
 }
