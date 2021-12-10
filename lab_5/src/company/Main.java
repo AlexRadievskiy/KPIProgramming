@@ -3,6 +3,7 @@ package company;
 public class Main {
 
     public static void main(String[] args) {
+
         int [][] matrix = {
                 {11,12,13,14,15},
                 {21,22,23,24,25},
@@ -11,7 +12,8 @@ public class Main {
 //        int [][] matrix = {
 //                {11,12,13,14},
 //                {21,22,23,24},
-//                {31,32,33,34}};
+//                {31,32,33,34},
+//                {41,42,43,44},};
 
 //        int[][] matrix = null;
 
@@ -21,34 +23,35 @@ public class Main {
                 {0,0,0,1},
                 {1,1,1,0}};
 
+        int[] array = new int[soccerScore.length+1];
+
+        try {
         //Заданый массив
         for (int i = 0; i < matrix.length; i++) { //идём по строкам
-            for (int j = 0; j < matrix.length+1; j++) { //идём по столбцам
+            for (int j = 0; j < matrix[i].length; j++) { //идём по столбцам
                 System.out.print(" " + matrix[i][j] + " "); //вывод элемента
             }
             System.out.println();
         }
         System.out.println();
 
-        try {
         ReplacingStrings.lolSwap(matrix);
 
             for (int i = 0; i < matrix.length; i++) { //идём по строкам
-                for (int j = 0; j < matrix.length+1; j++) { //идём по столбцам
+                for (int j = 0; j < matrix[i].length; j++) { //идём по столбцам
                     System.out.print(" " + matrix[i][j] + " "); //вывод элемента
                 }
                 System.out.println();
             }
             System.out.println();
 
-        } catch (NullPointerException e) {
-            System.out.println("EXCEPTION! Array length is null " + e.getMessage());
-        }
+            SoccerGame.getFlawless(soccerScore, array);
 
-        try {
+            for (int i = 0; i < array.length-1; i++) {
+                if (array[i] != 0)
+                System.out.println(array[i]);
+            }
 
-            SoccerGame.getFlawless(soccerScore);
-//            System.out.println("Команда " + SoccerGame.getFlawless(soccerScore) + " прошла все матрчи без единого поражения!");
         } catch (NullPointerException e) {
             System.out.println("EXCEPTION! Array length is null " + e.getMessage());
         }

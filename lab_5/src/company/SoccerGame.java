@@ -1,9 +1,13 @@
 package company;
 
 public class SoccerGame {
-    public static int[] getFlawless(int[][] soccerScore) {
+    public static int[] getFlawless(int[][] soccerScore, int[] array) {
+        Exception.finder(soccerScore);
+        Exception.squareMatrixChecker(soccerScore);
+
         int teem = 0;
         int count = 0;
+        int arraySizeCount = -1;
 
         for (int i = 0; i < soccerScore.length; i++) { //идём по строкам
             for (int j = 0; j < soccerScore[0].length; j++) { //идём по столбцам
@@ -12,13 +16,13 @@ public class SoccerGame {
                 }
             }
             teem++;
+            arraySizeCount++;
 
             if (count <= 1) {
-                System.out.println("Команда " + teem + " прошла все матрчи без единого поражения!");
+                array[arraySizeCount] = teem;
             }
             count = 0;
         }
-
-        return null;
+        return array;
     }
 }
