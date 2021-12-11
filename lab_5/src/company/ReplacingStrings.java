@@ -1,7 +1,5 @@
 package company;
 
-import java.util.Arrays;
-
 public class ReplacingStrings {
     public static void lolSwap(int[][] matrix) {
         Exception.finder(matrix);

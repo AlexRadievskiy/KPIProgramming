@@ -8,13 +8,7 @@ public class Exception {
         if (matrix.length == 0) {
             throw new IllegalArgumentException();
         }
-//        for (int i = 0; i < mass.length; i++) { //идём по строкам
-//            for (int j = 0; j < mass[i].length; j++) { //идём по столбцам
-//                if (mass.length != mass[i].length) {
-//                    throw new IllegalArgumentException();
-//                }
-//            }
-//        }
+
     }
     public static void squareMatrixChecker(int[][] soccerScore) {
         for (int i = 0; i < soccerScore.length; i++) { //идём по строкам

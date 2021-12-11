@@ -1,6 +1,7 @@
 package company;
 
 public class SoccerGame {
+
     public static int[] getFlawless(int[][] soccerScore, int[] array) {
         Exception.finder(soccerScore);
         Exception.squareMatrixChecker(soccerScore);
