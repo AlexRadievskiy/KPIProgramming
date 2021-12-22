@@ -1,5 +1,7 @@
 package company;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -26,10 +28,10 @@ public class Main {
         int[] array = new int[soccerScore.length];
 
         try {
-            //Заданый массив
-            for (int i = 0; i < matrix.length; i++) { //идём по строкам
-                for (int j = 0; j < matrix[i].length; j++) { //идём по столбцам
-                    System.out.print(" " + matrix[i][j] + " "); //вывод элемента
+            //TASK 1
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    System.out.print(" " + matrix[i][j] + " ");
                 }
                 System.out.println();
             }
@@ -37,22 +39,24 @@ public class Main {
 
             ReplacingStrings.lolSwap(matrix);
 
-            for (int i = 0; i < matrix.length; i++) { //идём по строкам
-                for (int j = 0; j < matrix[i].length; j++) { //идём по столбцам
-                    System.out.print(" " + matrix[i][j] + " "); //вывод элемента
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    System.out.print(" " + matrix[i][j] + " ");
                 }
                 System.out.println();
             }
             System.out.println();
 
+            //TASK 2
             SoccerGame.getFlawless(soccerScore, array);
+            System.out.println(Arrays.toString(SoccerGame.getFlawless(soccerScore, array)));
 
-            for (int i = 0; i < SoccerGame.getFlawless(soccerScore, array).length; i++) {
+            for (int i = 0; i < array.length; i++) {
                 if (array[i] != 0)
                     System.out.println("Команда " + array[i] + " не имеет проиграшей");
             }
 
-        } catch (NullPointerException e) {
+        } catch (NullPointerException | IllegalArgumentException e) {
             System.out.println("EXCEPTION! Array length is null " + e.getMessage());
         }
     }

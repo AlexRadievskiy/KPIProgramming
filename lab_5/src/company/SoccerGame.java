@@ -8,20 +8,20 @@ public class SoccerGame {
 
         int teem = 0;
         int count = 0;
-        int arraySizeCount = -1;
+        int arraySizeCount = 0;
 
-        for (int i = 0; i < soccerScore.length; i++) { //идём по строкам
-            for (int j = 0; j < soccerScore[0].length; j++) { //идём по столбцам
+        for (int i = 0; i < soccerScore.length; i++) {
+            for (int j = 0; j < soccerScore[0].length; j++) {
                 if (soccerScore[i][j] == 0) {
                     count++;
                 }
             }
             teem++;
-            arraySizeCount++;
 
             if (count <= 1) {
                 array[arraySizeCount] = teem;
             }
+            arraySizeCount++;
             count = 0;
         }
         return array;

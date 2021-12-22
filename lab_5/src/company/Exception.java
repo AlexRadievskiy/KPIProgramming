@@ -11,8 +11,8 @@ public class Exception {
 
     }
     public static void squareMatrixChecker(int[][] soccerScore) {
-        for (int i = 0; i < soccerScore.length; i++) { //идём по строкам
-            for (int j = 0; j < soccerScore[i].length; j++) { //идём по столбцам
+        for (int i = 0; i < soccerScore.length; i++) {
+            for (int j = 0; j < soccerScore[i].length; j++) {
                 if (soccerScore.length != soccerScore[i].length) {
                     throw new IllegalArgumentException();
                 }
