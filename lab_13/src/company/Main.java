@@ -20,8 +20,8 @@ public class Main {
             Video secondVideo = new Video(null, "https://linkTwo", 432, 324, 0, secondCommentsList);
 
             HashSet<Video> videoList = new HashSet<>();
-//            videoList.add(firstVideo);
-//            videoList.add(secondVideo);
+            videoList.add(firstVideo);
+            videoList.add(secondVideo);
 
             VideoBlog videoblog = new VideoBlog("Georg", videoList);
 
