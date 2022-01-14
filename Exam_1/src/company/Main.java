@@ -7,18 +7,24 @@ public class Main {
     public static void main(String[] args) {
         Students firstStudent = new Students("Alex", "Surname", 5, 54.3);
         Students secondStudent = new Students("Masha", "Surname", 3, 44.5);
-        ArrayList<Students> StudentsList = new ArrayList<>();
-        StudentsList.add(firstStudent);
-        StudentsList.add(secondStudent);
-        Faculty FICT = new Faculty("FICT", StudentsList);
+        Students thirdStudent = new Students("Dima", "Surname", 7, 12);
+        ArrayList<Students> fictStudents = new ArrayList<>();
+        ArrayList<Students> otherFacStudents = new ArrayList<>();
+        fictStudents.add(firstStudent);
+        fictStudents.add(secondStudent);
+        otherFacStudents.add(thirdStudent);
+
+        Faculty fict = new Faculty("FICT", fictStudents);
+        Faculty otherFaculty = new Faculty("Other faculty", otherFacStudents);
 
         ArrayList<Faculty> facultyList = new ArrayList<>();
-        facultyList.add(FICT);
+        facultyList.add(fict);
+        facultyList.add(otherFaculty);
 
-        Institute KPI = new Institute("KPI", facultyList);
+        Institute kpi = new Institute("KPI", facultyList);
 
         //ВЫВОД
-//        System.out.println(size); //Общее количество просмотров
+        System.out.println(kpi.getTheMostPopularFaculty());
 
     }
 }

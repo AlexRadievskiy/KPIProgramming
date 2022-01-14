@@ -1,6 +1,7 @@
 package company;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Institute {
     private String instituteName;
@@ -11,11 +12,11 @@ public class Institute {
         this.facultyList = facultyList;
     }
 
-    public String getШnstituteName() {
+    public String getInstituteName() {
         return instituteName;
     }
 
-    public void setШnstituteName(String instituteName) {
+    public void setInstituteName(String instituteName) {
         this.instituteName = instituteName;
     }
 
@@ -27,53 +28,22 @@ public class Institute {
         this.facultyList = facultyList;
     }
 
-
-//    //Типизированный цикл «for-each»;
-//    public boolean moreCommentLikesThanVideoLikes2() {
-//        for (Faculty vid : videoList) {
-//            for (Students co : vid.getListOfStudents()) {
-//                if (vid.getVideoLikes() < co.getNumberOfLikes()) {
-//                    return true;
-//                }
-//            }
-//        }
-//        return false;
-//    }
-//
-//    //Типизированный итератор;
-//    public ArrayList<String> maxVideoDislikes() {
-//        ArrayList<String> maxDislikes = new ArrayList<>();
-//        if (worstVideo().getVideoLikes() == 0) {
-//            return new ArrayList<>();
-//        }
-//        long number = worstVideo().getVideoDislikes();
-//        for (Iterator<Faculty> i = videoList.iterator(); i.hasNext(); ) {
-//            Faculty vid = i.next();
-//            if (vid.getVideoDislikes() >= number) {
-//                maxDislikes.add(vid.getVideoTitle());
-//                number = vid.getVideoDislikes();
-//            }
-//
-//        }
-//        return maxDislikes;
-//    }
-//
-//    public Faculty worstVideo() {
-//        Faculty worst = new Faculty();
-//        for (Iterator<Faculty> i = videoList.iterator(); i.hasNext(); ) {
-//            Faculty obj = i.next();
-//            if (worst.getVideoDislikes() <= obj.getVideoDislikes()) {
-//                worst = obj;
-//            }
-//        }
-//        return worst;
-//
-
+    public Faculty getTheMostPopularFaculty() {
+        int counter = 0;
+        Faculty theMostPopularFaculty = null;
+        for (Faculty facultyList : this.getFacultyList()) {
+            if (facultyList.getListOfStudents().size() > counter) {
+                counter = facultyList.getListOfStudents().size();
+                theMostPopularFaculty = facultyList;
+            }
+        }
+        return theMostPopularFaculty;
+    }
 
     @Override
     public String toString() {
         return "Institute{" +
-                "шnstituteName='" + instituteName + '\'' +
+                "instituteName='" + instituteName + '\'' +
                 ", facultyList=" + facultyList +
                 '}';
     }

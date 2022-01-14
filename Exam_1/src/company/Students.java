@@ -1,7 +1,5 @@
 package company;
 
-import java.util.Iterator;
-
 public class Students {
     private String studentName;
     private String studentSurname;
