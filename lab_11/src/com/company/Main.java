@@ -10,7 +10,7 @@ public class Main {
         Comments secondComment = new Comments("+Like", 20, 32);
         Video firstVideo = new Video("hi", "https://linkOne", 321, 21, 9, Set.of(firstComment, secondComment));
         //Второе видео
-        Comments thirdComment = new Comments("Terrible", 6, 64);
+        Comments thirdComment = new Comments("Terrible", 7, 64);
         Comments fourthComment = new Comments("Super", 12, 54);
         Video secondVideo = new Video ("New video", "https://linkTwo", 542, 0, 7, Set.of(thirdComment, fourthComment));
         //Третье видео
