@@ -13,7 +13,7 @@ public class Main {
             firstCommentsList.add(secondComment);
             Video firstVideo = new Video("First title", "https://linkOne", 423, 898, 0, firstCommentsList);
 
-            Comments thirdComment = new Comments("super", 321, 42);
+            Comments thirdComment = new Comments("superr", 321, 42);
             HashSet<Comments> secondCommentsList = new HashSet<>();
 
             secondCommentsList.add(thirdComment);
