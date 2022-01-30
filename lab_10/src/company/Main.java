@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        Comments firstComment = new Comments("Best I've heard", 50, 240);
+        Comments firstComment = new Comments("-", 50, 240);
         Comments secondComment = new Comments("Very sad", 78, 423);
         ArrayList<Comments> firstCommentsList = new ArrayList<>();
         firstCommentsList.add(firstComment);
